@@ -1,9 +1,11 @@
 package tn.esprit.spring.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.validation.constraints.Pattern;
 
 import org.ocpsoft.rewrite.annotation.Join;
 import org.ocpsoft.rewrite.el.ELBeanName;
@@ -11,8 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.entities.Employe;
+import tn.esprit.spring.entities.Entreprise;
+import tn.esprit.spring.entities.Mission;
 import tn.esprit.spring.entities.Role;
+import tn.esprit.spring.entities.Timesheet;
 import tn.esprit.spring.services.IEmployeService;
 
 
@@ -166,7 +172,27 @@ public class ControllerEmployeImpl  {
 
 	}
 
-	
+	public void affecterEmployeADepartement(int employeId, int depId) {
+		employeService.affecterEmployeADepartement(employeId, depId);
+
+	}
+
+
+
+	public void desaffecterEmployeDuDepartement(int employeId, int depId)
+	{
+		employeService.desaffecterEmployeDuDepartement(employeId, depId);
+	}
+
+	public int ajouterContrat(Contrat contrat) {
+		employeService.ajouterContrat(contrat);
+		return contrat.getReference();
+	}
+
+	public void affecterContratAEmploye(int contratId, int employeId)
+	{
+		employeService.affecterContratAEmploye(contratId, employeId);
+	}
 
 
 	public String getEmployePrenomById(int employeId) {
@@ -177,7 +203,9 @@ public class ControllerEmployeImpl  {
 		employeService.deleteEmployeById(employeId);
 
 	}
-
+	public void deleteContratById(int contratId) {
+		employeService.deleteContratById(contratId);
+	}
 
 	public int getNombreEmployeJPQL() {
 
@@ -189,19 +217,33 @@ public class ControllerEmployeImpl  {
 		return employeService.getAllEmployeNamesJPQL();
 	}
 
+	public List<Employe> getAllEmployeByEntreprise(Entreprise entreprise) {
+		return employeService.getAllEmployeByEntreprise(entreprise);
+	}
 
 	public void mettreAjourEmailByEmployeIdJPQL(String email, int employeId) {	
 		employeService.mettreAjourEmailByEmployeIdJPQL(email, employeId);
 
 	}
 
+	public void deleteAllContratJPQL() {
+		employeService.deleteAllContratJPQL();
+
+	}
 
 	public float getSalaireByEmployeIdJPQL(int employeId) {
 		return employeService.getSalaireByEmployeIdJPQL(employeId);
 	}
 
 
-	
+	public Double getSalaireMoyenByDepartementId(int departementId) {
+		return employeService.getSalaireMoyenByDepartementId(departementId);
+	}
+
+	public List<Timesheet> getTimesheetsByMissionAndDate(Employe employe, Mission mission, Date dateDebut,
+			Date dateFin) {
+		return employeService.getTimesheetsByMissionAndDate(employe, mission, dateDebut, dateFin);
+	}
 
 	public String getPrenom() {
 		return prenom;

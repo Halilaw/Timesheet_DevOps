@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import tn.esprit.spring.entities.Employe;
-
+import tn.esprit.spring.entities.Entreprise;
 
 @Repository
 public interface EmployeRepository extends CrudRepository<Employe, Integer>  {
@@ -27,6 +27,12 @@ public interface EmployeRepository extends CrudRepository<Employe, Integer>  {
     @Query("SELECT nom FROM Employe")
     public List<String> employeNames();
     
+    @Query("Select "
+			+ "DISTINCT emp from Employe emp "
+			+ "join emp.departements dps "
+			+ "join dps.entreprise entrep "
+			+ "where entrep=:entreprise")
+    public List<Employe> getAllEmployeByEntreprisec(@Param("entreprise") Entreprise entreprise);
     
     @Modifying
     @Transactional
