@@ -4,7 +4,7 @@
 stages {
       stage("Cloning Project") {
       steps {
-      git branch: 'main', url: 'https://github.com/Halilaw/Timesheet_DevOps.git'
+      git branch: 'Master', url: 'https://github.com/Halilaw/Timesheet_DevOps.git'
             }}
               stage("Build") {
        steps {
