@@ -1,5 +1,4 @@
 package tn.esprit.devops;
-
 import java.util.ArrayList;
 import static org.junit.Assert.*;
 import org.apache.logging.log4j.LogManager;
@@ -20,7 +19,7 @@ import tn.esprit.services.IEntrepriseService;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class EntrepriseTest {
-	
+	//@Autowired
 	@Mock
 	IEntrepriseService service;
 	
