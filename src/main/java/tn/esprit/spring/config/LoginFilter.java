@@ -1,4 +1,4 @@
-package tn.esprit.spring.config;
+package tn.esprit.config;
 
 import java.io.IOException;
 
@@ -10,7 +10,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import tn.esprit.spring.controller.ControllerEmployeImpl;
+import tn.esprit.controller.ControllerEmployeImpl;
 
 
 public class LoginFilter implements Filter {
@@ -24,7 +24,7 @@ public class LoginFilter implements Filter {
 		ControllerEmployeImpl employeController = 
 				(ControllerEmployeImpl) httpServletRequest.getSession().getAttribute("employeController");
 
-		if (employeController!=null && employeController.getAuthenticatedUser() != null && employeController.getLoggedIn()) 
+		if (employeController!=null && employeController.getAuthenticatedUser() != null && Boolean.TRUE.equals(employeController.getLoggedIn())) 
 		{ filterChain.doFilter(servletRequest, servletResponse);} 
 		
 		else {httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "/login.jsf" );}

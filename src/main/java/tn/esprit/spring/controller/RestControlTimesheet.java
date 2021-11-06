@@ -1,4 +1,4 @@
-package tn.esprit.spring.controller;
+package tn.esprit.controller;
 
 import java.util.Date;
 import java.util.List;
@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import tn.esprit.spring.entities.Employe;
-import tn.esprit.spring.entities.Mission;
-import tn.esprit.spring.services.IEmployeService;
-import tn.esprit.spring.services.IEntrepriseService;
-import tn.esprit.spring.services.ITimesheetService;
+import tn.esprit.entities.Employe;
+import tn.esprit.entities.Mission;
+import tn.esprit.services.IEmployeService;
+import tn.esprit.services.IEntrepriseService;
+import tn.esprit.services.ITimesheetService;
 
 @RestController
 public class RestControlTimesheet {
@@ -29,14 +29,13 @@ public class RestControlTimesheet {
 	ITimesheetService itimesheetservice;
 	
 	// http://localhost:8081/SpringMVC/servlet/ajouterMission
-	//{"id":4,"name":"mamission", "description":"c ma mission"}
-	@PostMapping("/ajouterMission")
-	@ResponseBody
-	public int ajouterMission(@RequestBody Mission mission) {
+	
+	public int ajouterMission(Mission mission) {
 		itimesheetservice.ajouterMission(mission);
 		return mission.getId();
 	}
-
+	
+	
 	// http://localhost:8081/SpringMVC/servlet/affecterMissionADepartement/4/4
 	@PutMapping(value = "/affecterMissionADepartement/{idmission}/{iddept}") 
 	public void affecterMissionADepartement(@PathVariable("idmission") int missionId, @PathVariable("iddept") int depId) {
@@ -44,7 +43,7 @@ public class RestControlTimesheet {
 	}
 	
 	// http://localhost:8081/SpringMVC/servlet/ajouterTimesheet
-    //{"missionId":1,"employeId":2,"dateDebut":"2020-03-01","dateFin":"2021-03-01"}
+    
 	
 	@PostMapping("/ajouterTimesheet/idmission/idemp/dated/datef")
 	@ResponseBody

@@ -1,4 +1,4 @@
-package tn.esprit.spring.repository;
+package tn.esprit.repository;
 
 import java.util.List;
 
@@ -9,13 +9,13 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import tn.esprit.spring.entities.Employe;
-import tn.esprit.spring.entities.Entreprise;
+import tn.esprit.entities.Employe;
+import tn.esprit.entities.Entreprise;
 
 @Repository
 public interface EmployeRepository extends CrudRepository<Employe, Integer>  {
 	
-	@Query("SELECT e FROM Employe e WHERE e.email=:email and e.password=:password")
+	@Query("SELECT e FROM Employe e WHERE e.email=:email and e.password= ?")
 	public Employe getEmployeByEmailAndPassword(@Param("email")String login, @Param("password")String password);
 	
 	
@@ -55,11 +55,6 @@ public interface EmployeRepository extends CrudRepository<Employe, Integer>  {
 			+ "join emp.departements deps "
 			+ "where deps.id=:depId")
     public Double getSalaireMoyenByDepartementId(@Param("depId")int departementId);
-
-
-
-
-	public void deleteEmployeById(int i);
 	
     		
    

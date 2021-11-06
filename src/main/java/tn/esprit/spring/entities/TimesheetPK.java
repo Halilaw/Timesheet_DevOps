@@ -1,4 +1,4 @@
-package tn.esprit.spring.entities;
+package tn.esprit.entities;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -6,6 +6,8 @@ import java.util.Date;
 import javax.persistence.Embeddable;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+
 
 @Embeddable
 public class TimesheetPK implements Serializable {
@@ -53,6 +55,7 @@ public class TimesheetPK implements Serializable {
 
 	@Override
 	public boolean equals(Object obj) {
+		
 		if (this == obj)
 			return true;
 		if (obj == null)
@@ -64,19 +67,17 @@ public class TimesheetPK implements Serializable {
 			if (other.dateDebut != null)
 				return false;
 		} else if (!dateDebut.equals(other.dateDebut))
-			return false;
+			{return false;}
 		if (dateFin == null) {
 			if (other.dateFin != null)
 				return false;
 		} else if (!dateFin.equals(other.dateFin))
-			return false;
+			{return false;}
 		if (idEmploye != other.idEmploye)
-			return false;
-		if (idMission != other.idMission)
-			return false;
-		return true;
+			{return false;}
+		return idMission != other.idMission;
+		
 	}
-
 	public void setIdMission(int idMission) {
 		this.idMission = idMission;
 	}

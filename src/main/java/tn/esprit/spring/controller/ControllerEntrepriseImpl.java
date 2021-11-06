@@ -1,18 +1,20 @@
-package tn.esprit.spring.controller;
+package tn.esprit.controller;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import tn.esprit.spring.entities.Departement;
-import tn.esprit.spring.entities.Entreprise;
-import tn.esprit.spring.services.IEmployeService;
-import tn.esprit.spring.services.IEntrepriseService;
-import tn.esprit.spring.services.ITimesheetService;
+import tn.esprit.entities.Departement;
+import tn.esprit.entities.Entreprise;
+import tn.esprit.services.IEmployeService;
+import tn.esprit.services.IEntrepriseService;
+import tn.esprit.services.ITimesheetService;
 
 @Controller
 public class ControllerEntrepriseImpl{
+	
+
 
 	@Autowired
 	IEmployeService iemployeservice;
@@ -21,18 +23,25 @@ public class ControllerEntrepriseImpl{
 	@Autowired
 	ITimesheetService itimesheetservice;
 
+	
+	
 	public int ajouterEntreprise(Entreprise ssiiConsulting) {
+		
 		ientrepriseservice.ajouterEntreprise(ssiiConsulting);
 		return ssiiConsulting.getId();
 	}
 	public void affecterDepartementAEntreprise(int depId, int entrepriseId) {
-		ientrepriseservice.affecterDepartementAEntreprise(depId, entrepriseId);
+		
+			ientrepriseservice.affecterDepartementAEntreprise(depId, entrepriseId);
+		
 	}
+		
+	
 	public void deleteEntrepriseById(int entrepriseId)
 	{
 		ientrepriseservice.deleteEntrepriseById(entrepriseId);
 	}
-	public Entreprise getEntrepriseById(int entrepriseId) {
+	public Entreprise getEntrepriseById() {
 
 		return ientrepriseservice.getEntrepriseById(1);
 	}
@@ -50,3 +59,8 @@ public class ControllerEntrepriseImpl{
 
 	}
 }
+
+
+
+
+
