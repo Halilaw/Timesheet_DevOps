@@ -3,6 +3,7 @@ package tn.esprit.spring.controller;
 import java.util.Date;
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import tn.esprit.spring.dto.EmployeDTO;
 import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Entreprise;
@@ -31,6 +33,8 @@ public class RestControlEmploye {
 	IEntrepriseService ientrepriseservice;
 	@Autowired
 	ITimesheetService itimesheetservice;
+	@Autowired
+	 private ModelMapper modelMapper;
 
 	
 	// http://localhost:8081/SpringMVC/servlet/ajouterEmployer
@@ -38,10 +42,11 @@ public class RestControlEmploye {
 	
 	@PostMapping("/ajouterEmployer")
 	@ResponseBody
-	public Employe ajouterEmploye(@RequestBody Employe employe)
+	public int ajouterEmploye(@RequestBody EmployeDTO employeDTO)
 	{
-		iemployeservice.addOrUpdateEmploye(employe);
-		return employe;
+		Employe employe= modelMapper.map(employeDTO,Employe.class);
+		return iemployeservice.addOrUpdateEmploye(employe);
+		
 	}
 	
 	// Modifier email : http://localhost:8081/SpringMVC/servlet/modifyEmail/1/newemail
