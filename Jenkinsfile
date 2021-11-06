@@ -29,7 +29,7 @@ stages {
 
       stage("DEPLOY with Nexus") {
       steps {
-       bat "mvn mvn deploy"
+       bat "mvn deploy"
 			}}
 		}
 	}
