@@ -2,11 +2,8 @@ package tn.esprit.spring.controller;
 
 import java.util.Date;
 import java.util.List;
-
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
-import javax.validation.constraints.Pattern;
-
 import org.ocpsoft.rewrite.annotation.Join;
 import org.ocpsoft.rewrite.el.ELBeanName;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +31,7 @@ public class ControllerEmployeImpl  {
 	private String login; 
 	private String password; 
 	private Boolean loggedIn;
-
+	private String  weblogin = "/login.xhtml?faces-redirect=true";
 	private Employe authenticatedUser = null; 
 	private String prenom; 
 	private String nom; 
@@ -44,7 +41,7 @@ public class ControllerEmployeImpl  {
 	public Role[] getRoles() { return Role.values(); }
 
 	private List<Employe> employes; 
-
+	
 	private Integer employeIdToBeUpdated; // getter et setter
 
 
@@ -71,13 +68,13 @@ public class ControllerEmployeImpl  {
 	{
 		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
 	
-	return "/login.xhtml?faces-redirect=true";
+	return weblogin;
 	}
 
 
 	public String addEmploye() {
 
-		if (authenticatedUser==null || !loggedIn) return "/login.xhtml?faces-redirect=true";
+		if (authenticatedUser==null || !loggedIn) return weblogin;
 
 		employeService.addOrUpdateEmploye(new Employe(nom, prenom, email, password, actif, role)); 
 		return "null"; 
@@ -85,16 +82,16 @@ public class ControllerEmployeImpl  {
 
 	public String removeEmploye(int employeId) {
 		String navigateTo = "null";
-		if (authenticatedUser==null || !loggedIn) return "/login.xhtml?faces-redirect=true";
+		if (authenticatedUser==null || !loggedIn) return weblogin;
 
-		employeService.deleteEmployeById(employeId);
+		employeService.deleteEmploye(employeId);
 		return navigateTo; 
 	} 
 
 	public String displayEmploye(Employe empl) 
 	{
 		String navigateTo = "null";
-		if (authenticatedUser==null || !loggedIn) return "/login.xhtml?faces-redirect=true";
+		if (authenticatedUser==null || !loggedIn) return weblogin;
 
 
 		this.setPrenom(empl.getPrenom());
@@ -113,7 +110,7 @@ public class ControllerEmployeImpl  {
 	{ 
 		String navigateTo = "null";
 		
-		if (authenticatedUser==null || !loggedIn) return "/login.xhtml?faces-redirect=true";
+		if (authenticatedUser==null || !loggedIn) return weblogin;
 
 		employeService.addOrUpdateEmploye(new Employe(employeIdToBeUpdated, nom, prenom, email, password, actif, role)); 
 
@@ -172,12 +169,50 @@ public class ControllerEmployeImpl  {
 
 	}
 
-	public void affecterEmployeADepartement(int employeId, int depId) {
-		employeService.affecterEmployeADepartement(employeId, depId);
+
+	public String getEmployePrenomById(int employeId) {
+		return employeService.getEmployePrenomById(employeId);
+	}
+
+	public void deleteEmployeById(int employeId) {
+		employeService.deleteEmploye(employeId);
 
 	}
 
 
+	public int getNombreEmployeJPQL() {
+
+		return employeService.getNombreEmployeJPQL();
+	}
+
+	public List<String> getAllEmployeNamesJPQL() {
+
+		return employeService.getAllEmployeNamesJPQL();
+	}
+
+
+	public List<Employe> getAllEmployeByEntreprise(Entreprise entreprise) {
+		return employeService.getAllEmployeByEntreprise(entreprise);
+	}
+	public void deleteContratById(int contratId) {
+		employeService.deleteContratById(contratId);
+	}
+	public void deleteAllContratJPQL() {
+		employeService.deleteAllContratJPQL();
+
+	}
+	public Double getSalaireMoyenByDepartementId(int departementId) {
+		return employeService.getSalaireMoyenByDepartementId(departementId);
+	}
+
+	public List<Timesheet> getTimesheetsByMissionAndDate(Employe employe, Mission mission, Date dateDebut,
+			Date dateFin) {
+		return employeService.getTimesheetsByMissionAndDate(employe, mission, dateDebut, dateFin);
+	}
+	public void affecterEmployeADepartement(int employeId, int depId) {
+		employeService.affecterEmployeADepartement(employeId, depId);
+
+	}
 
 	public void desaffecterEmployeDuDepartement(int employeId, int depId)
 	{
@@ -195,55 +230,19 @@ public class ControllerEmployeImpl  {
 	}
 
 
-	public String getEmployePrenomById(int employeId) {
-		return employeService.getEmployePrenomById(employeId);
-	}
-
-	public void deleteEmployeById(int employeId) {
-		employeService.deleteEmployeById(employeId);
-
-	}
-	public void deleteContratById(int contratId) {
-		employeService.deleteContratById(contratId);
-	}
-
-	public int getNombreEmployeJPQL() {
-
-		return employeService.getNombreEmployeJPQL();
-	}
-
-	public List<String> getAllEmployeNamesJPQL() {
-
-		return employeService.getAllEmployeNamesJPQL();
-	}
-
-	public List<Employe> getAllEmployeByEntreprise(Entreprise entreprise) {
-		return employeService.getAllEmployeByEntreprise(entreprise);
-	}
-
 	public void mettreAjourEmailByEmployeIdJPQL(String email, int employeId) {	
 		employeService.mettreAjourEmailByEmployeIdJPQL(email, employeId);
 
 	}
 
-	public void deleteAllContratJPQL() {
-		employeService.deleteAllContratJPQL();
 
-	}
 
 	public float getSalaireByEmployeIdJPQL(int employeId) {
 		return employeService.getSalaireByEmployeIdJPQL(employeId);
 	}
 
 
-	public Double getSalaireMoyenByDepartementId(int departementId) {
-		return employeService.getSalaireMoyenByDepartementId(departementId);
-	}
 
-	public List<Timesheet> getTimesheetsByMissionAndDate(Employe employe, Mission mission, Date dateDebut,
-			Date dateFin) {
-		return employeService.getTimesheetsByMissionAndDate(employe, mission, dateDebut, dateFin);
-	}
 
 	public String getPrenom() {
 		return prenom;

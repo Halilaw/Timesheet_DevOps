@@ -9,32 +9,32 @@ import tn.esprit.spring.entities.Entreprise;
 import tn.esprit.spring.entities.Mission;
 import tn.esprit.spring.entities.Timesheet;
 
-
 public interface IEmployeService {
-	
+	//wael
 	public Employe authenticate(String login, String password) ;
-	 
+	public String mettreAjourEmailByEmployeId(String email, int employeId);
+	int addOrUpdateEmploye(Employe employe);
+	public String getEmployePrenomById(int employeId);
+	public String deleteEmploye(int id) ;
+	public String mettreAjourEmailByEmployeIdJPQL(String email, int employeId);
+	public List<Employe> getAllEmployes();
+	public int getNombreEmployeJPQL();
+	public List<String> getAllEmployeNamesJPQL();
+	public float getSalaireByEmployeIdJPQL(int employeId);
+	//Fin wael
 	
-	public void mettreAjourEmailByEmployeId(String email, int employeId);
-	public void affecterEmployeADepartement(int employeId, int depId);
+	public List<Employe> getAllEmployeByEntreprise(Entreprise entreprise);
+	public void deleteAllContratJPQL();
+	public Double getSalaireMoyenByDepartementId(int departementId);
+	public void deleteContratById(int contratId);
+	public List<Timesheet> getTimesheetsByMissionAndDate(Employe employe, Mission mission, 
+	Date dateDebut, Date dateFin);
 	public void desaffecterEmployeDuDepartement(int employeId, int depId);
 	public int ajouterContrat(Contrat contrat);
 	public void affecterContratAEmploye(int contratId, int employeId);
-	public String getEmployePrenomById(int employeId);
-	public void deleteEmployeById(int employeId);
-	public void deleteContratById(int contratId);
-	public int getNombreEmployeJPQL();
-	public List<String> getAllEmployeNamesJPQL();
-	public List<Employe> getAllEmployeByEntreprise(Entreprise entreprise);
-	public void mettreAjourEmailByEmployeIdJPQL(String email, int employeId);
-	public void deleteAllContratJPQL();
-	public float getSalaireByEmployeIdJPQL(int employeId);
-	public Double getSalaireMoyenByDepartementId(int departementId);
-	public List<Employe> getAllEmployes();
-	public List<Timesheet> getTimesheetsByMissionAndDate(Employe employe, Mission mission, 
-	Date dateDebut, Date dateFin);
-
-	int addOrUpdateEmploye(Employe employe);
+	public void affecterEmployeADepartement(int employeId, int depId);
+	
+	
 	
 	
 	
