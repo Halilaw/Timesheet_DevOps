@@ -121,7 +121,6 @@
 </dependency>
 	</dependencies>
 
-
 	<build>
 		<outputDirectory>src/main/webapp/WEB-INF/classes</outputDirectory>
 		<plugins>
