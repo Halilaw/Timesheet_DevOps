@@ -178,7 +178,6 @@
       </plugins>
     </pluginManagement>
 	</build>
-	
 	<distributionManagement>
  <snapshotRepository>
    <id>nexus</id>
