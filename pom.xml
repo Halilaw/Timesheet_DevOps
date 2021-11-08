@@ -64,7 +64,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
 		<!-- JSF -->
 		<dependency>
 			<groupId>org.apache.myfaces.core</groupId>
