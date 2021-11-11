@@ -19,8 +19,7 @@
 	
 	<groupId>tn.esprit</groupId>
 	<artifactId>timesheet_devops</artifactId>
-	<!--  <version>0.0.1-SNAPSHOT</version>-->
-	<version>1.0</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>timesheet_devops</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
