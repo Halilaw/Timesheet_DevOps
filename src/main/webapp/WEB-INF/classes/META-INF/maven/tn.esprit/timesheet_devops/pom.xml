@@ -19,7 +19,8 @@
 	
 	<groupId>tn.esprit</groupId>
 	<artifactId>timesheet_devops</artifactId>
-	<version>0.0.1</version>
+	<!--  <version>0.0.1-SNAPSHOT</version>-->
+	<version>1.0</version>
 	<name>timesheet_devops</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -27,6 +28,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	<maven.compiler.target>1.8</maven.compiler.target>
 	<maven.compiler.source>1.8</maven.compiler.source>
+	<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	
 	</properties>
 <dependencies>

@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Implementation-Title: timesheet_devops
-Implementation-Version: 0.0.1
+Implementation-Version: 1.0
 Built-By: Eya
 Implementation-Vendor-Id: tn.esprit
 Build-Jdk: 1.8.0_60
