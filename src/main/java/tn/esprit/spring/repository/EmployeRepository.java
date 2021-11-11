@@ -12,6 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Entreprise;
 
+
+
 @Repository
 public interface EmployeRepository extends CrudRepository<Employe, Integer>  {
 	
@@ -19,9 +21,6 @@ public interface EmployeRepository extends CrudRepository<Employe, Integer>  {
 	public Employe getEmployeByEmailAndPassword(@Param("email")String login, @Param("password")String password);
 	
 	
-	/*hgjhghjghjghjgjghfghjjhjhjdvf
-	 * fdfgdfgd
-	 * dfgdfgdfj*/
 	
 	@Query("SELECT count(*) FROM Employe")
     public int countemp();
