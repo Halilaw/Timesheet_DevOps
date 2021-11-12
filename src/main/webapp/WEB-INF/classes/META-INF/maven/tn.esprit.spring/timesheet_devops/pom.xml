@@ -7,7 +7,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.2.1.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath>..</relativePath> 
 	</parent>
 	
 	
@@ -21,7 +21,7 @@
 	
 	<groupId>tn.esprit.spring</groupId>
 	<artifactId>timesheet_devops</artifactId>
-	<version>2.2.1.RELEASE</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>timesheet_devops</name>
 	<description>timesheet_devops</description>
 	
