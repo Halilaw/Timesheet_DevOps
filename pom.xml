@@ -21,7 +21,7 @@
 	
 	<groupId>tn.esprit.spring</groupId>
 	<artifactId>timesheet_devops</artifactId>
-	<version>1.0</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>timesheet_devops</name>
 	<description>timesheet_devops</description>
@@ -71,6 +71,12 @@
 
 
 
+
+<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>6.1</version>
+		</dependency>
 <dependency>
 			<groupId>org.ocpsoft.rewrite</groupId>
 			<artifactId>rewrite-servlet</artifactId>

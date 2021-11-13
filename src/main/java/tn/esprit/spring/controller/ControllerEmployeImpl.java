@@ -3,8 +3,8 @@ package tn.esprit.spring.controller;
 import java.util.Date;
 import java.util.List;
 
-
-
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 
 import org.ocpsoft.rewrite.annotation.Join;
 import org.ocpsoft.rewrite.el.ELBeanName;
@@ -50,7 +50,7 @@ public class ControllerEmployeImpl  {
 	private Integer employeIdToBeUpdated; 
 
 	
-	/*public String doLogin() {
+	public String doLogin() {
 
 		String navigateTo = "null";
 		authenticatedUser=employeService.authenticate(login, password);
@@ -74,7 +74,7 @@ public class ControllerEmployeImpl  {
 		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
 	
 	return lg;
-	}*/
+	}
 
 
 	public String addEmploye() {
