@@ -21,7 +21,7 @@
 	
 	<groupId>tn.esprit.spring</groupId>
 	<artifactId>timesheet_devops</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>jar</packaging>
 	<name>timesheet_devops</name>
 	<description>timesheet_devops</description>
@@ -41,6 +41,22 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		
+		
+		
 <dependency>
     <groupId>org.junit.jupiter</groupId>
     <artifactId>junit-jupiter-api</artifactId>
@@ -102,11 +118,7 @@
 			<artifactId>myfaces-api</artifactId>
 			<version>2.2.12</version>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+		
 
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
@@ -116,6 +128,19 @@
 			<scope>test</scope>
 		</dependency>
 
+
+
+<!--  <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>-->
 
 		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
 		<dependency>
