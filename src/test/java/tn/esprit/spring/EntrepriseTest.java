@@ -150,5 +150,3 @@ public class EntrepriseTest {
 		}catch (Exception e) { l.error(()->"Erreur dans testSupprimerDepartement() : " + e); }
 	}
 }
-
-
