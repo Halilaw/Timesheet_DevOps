@@ -3,7 +3,7 @@
    tools {
         
         maven 'MAVEN_HOME'
-        jdk 'JDK_HOME'
+         jdk 'JDK_HOME'
     }
     stages {
 
