@@ -53,12 +53,7 @@ pipeline {
         stage('Building docker image') {
           steps{
                 dir("Timesheet_DevOps") {
-                    
-			bat "docker build -t devops ."
-			
-			bat "docker tag devops  salimbrahim/devops:1"
-			bat"docker login -u salimbrahim -p SalimBrahim1998"
-			bat "docker push  salimbrahim/devops:1"			
+                    bat "docker build -f Dockerfile -t app.jar ."
                 }
             }    
         }
@@ -66,7 +61,14 @@ pipeline {
             
           
         
-       
+        stage('Run docker image') {
+            steps{
+                dir("Timesheet_DevOps") {
+                    bat "docker run -d -p 8088:8088 app.jar"
+                }
+            }    
+        }
+        
       
           
        
