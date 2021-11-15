@@ -25,7 +25,7 @@
          stage("mvn test") {
             steps {
                 dir("Timesheet_DevOps"){
-                    bat "mvn test"
+                     bat "mvn test"
                 }
             }
         }
