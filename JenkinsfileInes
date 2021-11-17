@@ -1,8 +1,8 @@
-   pipeline 
+pipeline 
    {
    environment {
 		registry = "timesheet_devops1"
-		registryCredential = 'ines18'
+		registryCredential = 'dockerHub'
 		dockerImage = '' }
 		
          agent any
@@ -37,11 +37,11 @@ stages {
        bat "mvn deploy"
 			}}
 		
-	  stage('Build our image') {
+	  stage('Docker : Build image') {
 			steps {
 			script {
-				dockerImage = docker.build registry + ":$BUILD_NUMBER" }}}
-	stage('Deploy our image') {
+				dockerImage = docker.build registry}}}
+	stage('Docker : Push image') {
 			steps { 
 			script  {
 				docker.withRegistry( '', registryCredential ) {
@@ -51,4 +51,3 @@ stages {
 			}
 		}
 	}
-	
