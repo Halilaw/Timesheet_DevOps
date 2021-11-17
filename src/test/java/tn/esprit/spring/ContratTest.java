@@ -37,7 +37,7 @@ public class ContratTest {
 
 	private static final Logger l = LogManager.getLogger(ContratTest.class);
 
-	@Test(timeout = 2000)
+	@Test
 	public void getAllTest() {
 		l.info("entring to test getAllContrats");
 		Contrat c1 = new Contrat();
@@ -87,7 +87,7 @@ public class ContratTest {
 		l.info("test add contrat success");
 	}
 
-	@Test(timeout = 2000)
+	@Test
 	public void affectEmplToContrat() {
 
 		Contrat c = new Contrat();
