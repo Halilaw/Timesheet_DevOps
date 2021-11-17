@@ -1,4 +1,4 @@
-pipeline 
+  pipeline 
    {
    environment {
 		registry = "timesheet_devops1"
@@ -7,7 +7,7 @@ pipeline
 		
          agent any
 stages {
-      stage("Cloning Git") {
+      stage("Cloning Project") {
       steps {
       git branch: 'ines', url: 'https://github.com/Halilaw/Timesheet_DevOps.git'
             }}
@@ -17,41 +17,39 @@ stages {
        bat "mvn clean install"
              }}
 
-      stage("Unit test with Junit") {
+      stage("Unit tests") {
        steps {
        
        bat "mvn test"
              }}
     
-	  stage("Statistic Test with Sonar") {
+	  stage("test statique") {
        steps{
 		bat "mvn sonar:sonar "		
 			}}
-	  stage ("Maven clean") {    
+	  stage ("clean et packaging") {    
        steps {
          bat "mvn clean package "
 			}}
 
-      stage("Artefact Deploy with nexus") {
+      stage("DEPLOY with Nexus") {
       steps {
        bat "mvn deploy"
 			}}
 		
-	  stage('Building Image') {
+	  stage('Build our image') {
 			steps {
 			script {
-				dockerImage = docker.build registry}}}
-	stage('Deploying docker image') {
-          steps{
-               
-                    
-			
-			bat"docker login -u ines18 -p ines123456"
-			bat "docker push ines18/timesheet_devops1"			
-                
-            }}
+				dockerImage = docker.build registry  }}}
+	stage('Deploy our image') {
+			steps { 
+			script  {
+				bat " docker logout "
+				bat " docker login -u ines18 -p ines123456 "
+				bat " docker push ines18/timesheet_devops1:test "
 					}
 				 }
 			}
 		}
 	}
+	
