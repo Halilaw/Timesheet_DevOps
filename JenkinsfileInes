@@ -2,12 +2,12 @@ pipeline
    {
    environment {
 		registry = "timesheet_devops1"
-		registryCredential = 'dockerHub'
+		registryCredential = 'ines18'
 		dockerImage = '' }
 		
          agent any
 stages {
-      stage("Cloning Project") {
+      stage("Cloning Git") {
       steps {
       git branch: 'ines', url: 'https://github.com/Halilaw/Timesheet_DevOps.git'
             }}
@@ -17,31 +17,31 @@ stages {
        bat "mvn clean install"
              }}
 
-      stage("Unit tests") {
+      stage("Unit test with Junit") {
        steps {
        
        bat "mvn test"
              }}
     
-	  stage("test statique") {
+	  stage("Statistic Test with Sonar") {
        steps{
 		bat "mvn sonar:sonar "		
 			}}
-	  stage ("clean et packaging") {    
+	  stage ("Maven clean") {    
        steps {
          bat "mvn clean package "
 			}}
 
-      stage("DEPLOY with Nexus") {
+      stage("Artefact Deploy with nexus") {
       steps {
        bat "mvn deploy"
 			}}
 		
-	  stage('Docker : Build image') {
+	  stage('Building Image') {
 			steps {
 			script {
 				dockerImage = docker.build registry}}}
-	stage('Docker : Push image') {
+	stage('Deploying Image') {
 			steps { 
 			script  {
 				docker.withRegistry( '', registryCredential ) {
