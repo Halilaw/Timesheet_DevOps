@@ -68,12 +68,7 @@ pipeline {
             }    
         }
             
-            
-          
-        
-       
-      
-          
+
        
     }
     
@@ -82,7 +77,7 @@ pipeline {
         
     
         always { 
-            echo 'I will always say Hello again!'
+            echo 'I'm sending an email!'
             emailext (to: 'yasminenjim42@gmail.com',
             replyTo: 'yasminenjim42@gmail.com',
             subject: "Email Report from - '${env.JOB_NAME}' ",
