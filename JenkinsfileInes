@@ -3,7 +3,7 @@ pipeline
    environment {
 		registry = "timesheet_devops1"
 		registryCredential = 'ines18'
-		dockerImage = '' }
+		dockerImage = 'timesheet_devops1' }
 		
          agent any
 stages {
