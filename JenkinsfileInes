@@ -46,7 +46,11 @@ stages {
 			script  {
 				bat " docker logout "
 				bat " docker login -u ines18 -p ines123456 "
-				bat " docker push ines18/timesheet_devops1:test "
+				bat "docker build -t devops ."
+			
+			bat "docker tag devops  ines18/devops:1"
+			
+			bat "docker push  ines18/devops:1"
 					}
 				 }
 			}
