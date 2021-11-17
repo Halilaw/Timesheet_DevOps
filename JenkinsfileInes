@@ -49,7 +49,7 @@ stages {
 			bat"docker login -u ines18 -p ines123456"
 			bat "docker push ines18/timesheet_devops1"			
                 
-            }
+            }}
 					}
 				 }
 			}
