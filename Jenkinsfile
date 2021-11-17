@@ -77,7 +77,7 @@ pipeline {
         
     
         always { 
-            echo 'I'm sending an email!'
+            echo 'Im sending an email!'
             emailext (to: 'yasminenjim42@gmail.com',
             replyTo: 'yasminenjim42@gmail.com',
             subject: "Email Report from - '${env.JOB_NAME}' ",
