@@ -31,6 +31,8 @@ pipeline {
                      bat "mvn test"
                 }
             }
+		 
+		 
         }
        
        
@@ -84,7 +86,18 @@ pipeline {
         }
     }
     
+ post { 
+        
     
+        always { 
+            echo 'I will always say Hello again!'
+            emailext (to: 'yasminenjim42@gmail.com',
+           
+            subject: "Email Report from - '${env.JOB_NAME}' ",
+            attachLog:true,
+            body: readFile("C:/Program Files (x86)/Jenkins/workspace/pipeline_devops/Timesheet_DevOps/contrat.txt"));
+        }
+    }   
     
     
     
