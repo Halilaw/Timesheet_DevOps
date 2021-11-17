@@ -36,3 +36,17 @@
 2021- 11-15 22:22:33 tn.esprit.spring.ContratTest.addandDeleteContratTest(ContratTest.java:87):87 - affichage c: tn.esprit.spring.entities.Contrat@4946485c
 2021- 11-15 22:22:33 tn.esprit.spring.ContratTest.addandDeleteContratTest(ContratTest.java:89):89 - test add contrat success
 2021- 11-15 22:22:33 tn.esprit.spring.ContratTest.getAllTest(ContratTest.java:44):44 - entring to test getAllContrats
+2021- 11-17 21:48:35 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:80):80 - In Method getAllEmployes
+2021- 11-17 21:48:35 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:82):82 - Employes
+2021- 11-17 21:48:35 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:88):88 - out with succes
+2021- 11-17 21:48:35 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:80):80 - In Method getAllEmployes
+2021- 11-17 21:48:35 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:82):82 - Employes
+2021- 11-17 21:48:35 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:88):88 - out with succes
+2021- 11-17 21:48:35 tn.esprit.spring.services.EmployeServiceImpl.getEmployePrenomById(EmployeServiceImpl.java:100):100 - affichage d'une employe par id : 0
+2021- 11-17 21:48:35 tn.esprit.spring.services.EmployeServiceImpl.getEmployePrenomById(EmployeServiceImpl.java:111):111 - affichage sans erreurs 
+2021- 11-17 21:48:35 tn.esprit.spring.services.EmployeServiceImpl.getEmployePrenomById(EmployeServiceImpl.java:116):116 - Methode affichage
+2021- 11-17 21:48:35 tn.esprit.spring.services.EmployeServiceImpl.mettreAjourEmailByEmployeId(EmployeServiceImpl.java:54):54 - employe existe
+2021- 11-17 21:48:35 tn.esprit.spring.services.EmployeServiceImpl.mettreAjourEmailByEmployeId(EmployeServiceImpl.java:62):62 - mis a jour mail avec Succès
+2021- 11-17 21:48:35 tn.esprit.spring.services.EmployeServiceImpl.mettreAjourEmailByEmployeId(EmployeServiceImpl.java:66):66 - mis a jour sans erreur
+2021- 11-17 21:48:47 tn.esprit.spring.services.TimesheetServiceImpl.ajouterMission(TimesheetServiceImpl.java:38):38 - lancer la methode ajouterMission
+2021- 11-17 21:48:47 tn.esprit.spring.services.TimesheetServiceImpl.ajouterMission(TimesheetServiceImpl.java:42):42 - fin de  la methode ajouterMission
