@@ -13,7 +13,10 @@ pipeline {
                 bat "git clone -b yasmine https://github.com/Halilaw/Timesheet_DevOps.git"
             }
         }
+		
+		
         
+		
           stage('sonar'){
             steps {
                 dir("Timesheet_DevOps"){
