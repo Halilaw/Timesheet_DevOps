@@ -41,11 +41,15 @@ stages {
 			steps {
 			script {
 				dockerImage = docker.build registry}}}
-	stage('Deploying Image') {
-			steps { 
-			script  {
-				docker.withRegistry( '', registryCredential ) {
-				dockerImage.push()}
+	stage('Deploying docker image') {
+          steps{
+               
+                    
+			
+			bat"docker login -u ines18 -p ines123456"
+			bat "docker push ines18/timesheet_devops1"			
+                
+            }
 					}
 				 }
 			}
