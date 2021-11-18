@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import tn.esprit.spring.dto.EmployeDTO;
 import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Entreprise;
@@ -40,7 +41,7 @@ public class ControllerEmployeImpl  {
 	private Role role;  
 	public Role[] getRoles() { return Role.values(); }
 
-	private List<Employe> employes; 
+	private List<EmployeDTO> employes; 
 	
 	private Integer employeIdToBeUpdated; // getter et setter
 
@@ -76,7 +77,7 @@ public class ControllerEmployeImpl  {
 
 		if (authenticatedUser==null || !loggedIn) return weblogin;
 
-		employeService.addOrUpdateEmploye(new Employe(nom, prenom, email, password, actif, role)); 
+		employeService.addOrUpdateEmploye(new EmployeDTO(prenom, nom,password, email, actif, role)); 
 		return "null"; 
 	}  
 
@@ -112,7 +113,7 @@ public class ControllerEmployeImpl  {
 		
 		if (authenticatedUser==null || !loggedIn) return weblogin;
 
-		employeService.addOrUpdateEmploye(new Employe(employeIdToBeUpdated, nom, prenom, email, password, actif, role)); 
+		employeService.addOrUpdateEmploye(new EmployeDTO(employeIdToBeUpdated,prenom, nom,password,  email, actif, role)); 
 
 		return navigateTo; 
 
@@ -146,7 +147,7 @@ public class ControllerEmployeImpl  {
 	}
 
 
-	public List<Employe> getAllEmployes() {
+	public List<EmployeDTO> getAllEmployes() {
 		return employeService.getAllEmployes();
 	}
 
@@ -158,10 +159,10 @@ public class ControllerEmployeImpl  {
 		this.loggedIn = loggedIn;
 	}
 
-	public int ajouterEmploye(Employe employe)
+	public int ajouterEmploye(EmployeDTO employe)
 	{
 		employeService.addOrUpdateEmploye(employe);
-		return employe.getId();
+		return employe.getiDDto();
 	}
 
 	public void mettreAjourEmailByEmployeId(String email, int employeId) {
@@ -244,25 +245,19 @@ public class ControllerEmployeImpl  {
 
 
 
-	public String getPrenom() {
-		return prenom;
-	}
+	
 
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
 
-	public String getNom() {
-		return nom;
-	}
+	
 
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
 
-	public String getEmail() {
-		return email;
-	}
+	
 
 	public void setEmail(String email) {
 		this.email = email;
@@ -271,28 +266,24 @@ public class ControllerEmployeImpl  {
 
 
 
-	public boolean isActif() {
-		return actif;
-	}
+	
 
 	public void setActif(boolean actif) {
 		this.actif = actif;
 	}
 
-	public Role getRole() {
-		return role;
-	}
+	
 
 	public void setRole(Role role) {
 		this.role = role;
 	}
 
-	public List<Employe> getEmployes() {
+	public List<EmployeDTO> getEmployes() {
 		employes = employeService.getAllEmployes(); 
 		return employes;
 	}
 
-	public void setEmployes(List<Employe> employes) {
+	public void setEmployes(List<EmployeDTO> employes) {
 		this.employes = employes;
 	}
 

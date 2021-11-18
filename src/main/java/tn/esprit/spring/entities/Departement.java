@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import tn.esprit.spring.dto.EmployeDTO;
+
 
 @Entity
 public class Departement implements Serializable {
@@ -28,7 +30,7 @@ public class Departement implements Serializable {
 	//@JsonManagedReference 
 	@JsonIgnore
 	@ManyToMany
-	private List<Employe> employes;
+	private List<EmployeDTO> employes;
 	
 	@OneToMany(mappedBy="departement")
 	private List<Mission> missions;
@@ -60,11 +62,11 @@ public class Departement implements Serializable {
 		this.name = name;
 	}
 
-	public List<Employe> getEmployes() {
+	public List<EmployeDTO> getEmployes() {
 		return employes;
 	}
 
-	public void setEmployes(List<Employe> employes) {
+	public void setEmployes(List<EmployeDTO> employes) {
 		this.employes = employes;
 	}
 

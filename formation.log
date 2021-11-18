@@ -50,3 +50,59 @@
 2021- 11-17 21:48:35 tn.esprit.spring.services.EmployeServiceImpl.mettreAjourEmailByEmployeId(EmployeServiceImpl.java:66):66 - mis a jour sans erreur
 2021- 11-17 21:48:47 tn.esprit.spring.services.TimesheetServiceImpl.ajouterMission(TimesheetServiceImpl.java:38):38 - lancer la methode ajouterMission
 2021- 11-17 21:48:47 tn.esprit.spring.services.TimesheetServiceImpl.ajouterMission(TimesheetServiceImpl.java:42):42 - fin de  la methode ajouterMission
+2021- 11-17 21:49:09 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:80):80 - In Method getAllEmployes
+2021- 11-17 21:49:09 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:82):82 - Employes
+2021- 11-17 21:49:09 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:88):88 - out with succes
+2021- 11-17 21:49:09 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:80):80 - In Method getAllEmployes
+2021- 11-17 21:49:09 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:82):82 - Employes
+2021- 11-17 21:49:09 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:88):88 - out with succes
+2021- 11-17 21:49:09 tn.esprit.spring.services.EmployeServiceImpl.getEmployePrenomById(EmployeServiceImpl.java:100):100 - affichage d'une employe par id : 0
+2021- 11-17 21:49:09 tn.esprit.spring.services.EmployeServiceImpl.getEmployePrenomById(EmployeServiceImpl.java:111):111 - affichage sans erreurs 
+2021- 11-17 21:49:09 tn.esprit.spring.services.EmployeServiceImpl.getEmployePrenomById(EmployeServiceImpl.java:116):116 - Methode affichage
+2021- 11-17 21:49:09 tn.esprit.spring.services.EmployeServiceImpl.mettreAjourEmailByEmployeId(EmployeServiceImpl.java:54):54 - employe existe
+2021- 11-17 21:49:09 tn.esprit.spring.services.EmployeServiceImpl.mettreAjourEmailByEmployeId(EmployeServiceImpl.java:62):62 - mis a jour mail avec Succès
+2021- 11-17 21:49:09 tn.esprit.spring.services.EmployeServiceImpl.mettreAjourEmailByEmployeId(EmployeServiceImpl.java:66):66 - mis a jour sans erreur
+2021- 11-17 21:49:20 tn.esprit.spring.services.TimesheetServiceImpl.ajouterMission(TimesheetServiceImpl.java:38):38 - lancer la methode ajouterMission
+2021- 11-17 21:49:20 tn.esprit.spring.services.TimesheetServiceImpl.ajouterMission(TimesheetServiceImpl.java:42):42 - fin de  la methode ajouterMission
+2021- 11-17 21:51:36 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:80):80 - In Method getAllEmployes
+2021- 11-17 21:51:36 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:82):82 - Employes
+2021- 11-17 21:51:36 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:88):88 - out with succes
+2021- 11-17 21:51:36 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:80):80 - In Method getAllEmployes
+2021- 11-17 21:51:36 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:82):82 - Employes
+2021- 11-17 21:51:36 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:88):88 - out with succes
+2021- 11-17 21:51:36 tn.esprit.spring.services.EmployeServiceImpl.getEmployePrenomById(EmployeServiceImpl.java:100):100 - affichage d'une employe par id : 0
+2021- 11-17 21:51:36 tn.esprit.spring.services.EmployeServiceImpl.getEmployePrenomById(EmployeServiceImpl.java:111):111 - affichage sans erreurs 
+2021- 11-17 21:51:36 tn.esprit.spring.services.EmployeServiceImpl.getEmployePrenomById(EmployeServiceImpl.java:116):116 - Methode affichage
+2021- 11-17 21:51:36 tn.esprit.spring.services.EmployeServiceImpl.mettreAjourEmailByEmployeId(EmployeServiceImpl.java:54):54 - employe existe
+2021- 11-17 21:51:36 tn.esprit.spring.services.EmployeServiceImpl.mettreAjourEmailByEmployeId(EmployeServiceImpl.java:62):62 - mis a jour mail avec Succès
+2021- 11-17 21:51:36 tn.esprit.spring.services.EmployeServiceImpl.mettreAjourEmailByEmployeId(EmployeServiceImpl.java:66):66 - mis a jour sans erreur
+2021- 11-17 21:51:51 tn.esprit.spring.services.TimesheetServiceImpl.ajouterMission(TimesheetServiceImpl.java:38):38 - lancer la methode ajouterMission
+2021- 11-17 21:51:51 tn.esprit.spring.services.TimesheetServiceImpl.ajouterMission(TimesheetServiceImpl.java:42):42 - fin de  la methode ajouterMission
+2021- 11-17 21:52:14 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:80):80 - In Method getAllEmployes
+2021- 11-17 21:52:14 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:82):82 - Employes
+2021- 11-17 21:52:14 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:88):88 - out with succes
+2021- 11-17 21:52:14 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:80):80 - In Method getAllEmployes
+2021- 11-17 21:52:14 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:82):82 - Employes
+2021- 11-17 21:52:14 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:88):88 - out with succes
+2021- 11-17 21:52:14 tn.esprit.spring.services.EmployeServiceImpl.getEmployePrenomById(EmployeServiceImpl.java:100):100 - affichage d'une employe par id : 0
+2021- 11-17 21:52:14 tn.esprit.spring.services.EmployeServiceImpl.getEmployePrenomById(EmployeServiceImpl.java:111):111 - affichage sans erreurs 
+2021- 11-17 21:52:14 tn.esprit.spring.services.EmployeServiceImpl.getEmployePrenomById(EmployeServiceImpl.java:116):116 - Methode affichage
+2021- 11-17 21:52:14 tn.esprit.spring.services.EmployeServiceImpl.mettreAjourEmailByEmployeId(EmployeServiceImpl.java:54):54 - employe existe
+2021- 11-17 21:52:14 tn.esprit.spring.services.EmployeServiceImpl.mettreAjourEmailByEmployeId(EmployeServiceImpl.java:62):62 - mis a jour mail avec Succès
+2021- 11-17 21:52:14 tn.esprit.spring.services.EmployeServiceImpl.mettreAjourEmailByEmployeId(EmployeServiceImpl.java:66):66 - mis a jour sans erreur
+2021- 11-17 21:52:26 tn.esprit.spring.services.TimesheetServiceImpl.ajouterMission(TimesheetServiceImpl.java:38):38 - lancer la methode ajouterMission
+2021- 11-17 21:52:27 tn.esprit.spring.services.TimesheetServiceImpl.ajouterMission(TimesheetServiceImpl.java:42):42 - fin de  la methode ajouterMission
+2021- 11-17 23:11:51 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:80):80 - In Method getAllEmployes
+2021- 11-17 23:11:51 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:82):82 - Employes
+2021- 11-17 23:11:51 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:88):88 - out with succes
+2021- 11-17 23:11:51 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:80):80 - In Method getAllEmployes
+2021- 11-17 23:11:51 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:82):82 - Employes
+2021- 11-17 23:11:51 tn.esprit.spring.services.EmployeServiceImpl.getAllEmployes(EmployeServiceImpl.java:88):88 - out with succes
+2021- 11-17 23:11:51 tn.esprit.spring.services.EmployeServiceImpl.getEmployePrenomById(EmployeServiceImpl.java:100):100 - affichage d'une employe par id : 0
+2021- 11-17 23:11:51 tn.esprit.spring.services.EmployeServiceImpl.getEmployePrenomById(EmployeServiceImpl.java:111):111 - affichage sans erreurs 
+2021- 11-17 23:11:51 tn.esprit.spring.services.EmployeServiceImpl.getEmployePrenomById(EmployeServiceImpl.java:116):116 - Methode affichage
+2021- 11-17 23:11:51 tn.esprit.spring.services.EmployeServiceImpl.mettreAjourEmailByEmployeId(EmployeServiceImpl.java:54):54 - employe existe
+2021- 11-17 23:11:51 tn.esprit.spring.services.EmployeServiceImpl.mettreAjourEmailByEmployeId(EmployeServiceImpl.java:62):62 - mis a jour mail avec Succès
+2021- 11-17 23:11:51 tn.esprit.spring.services.EmployeServiceImpl.mettreAjourEmailByEmployeId(EmployeServiceImpl.java:66):66 - mis a jour sans erreur
+2021- 11-17 23:12:07 tn.esprit.spring.services.TimesheetServiceImpl.ajouterMission(TimesheetServiceImpl.java:38):38 - lancer la methode ajouterMission
+2021- 11-17 23:12:08 tn.esprit.spring.services.TimesheetServiceImpl.ajouterMission(TimesheetServiceImpl.java:42):42 - fin de  la methode ajouterMission

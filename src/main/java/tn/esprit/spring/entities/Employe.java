@@ -13,8 +13,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.validation.constraints.Pattern;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
@@ -31,31 +29,25 @@ public class Employe implements Serializable {
 	
 	private String nom;
 	
-	//@Column(unique=true)
-	//@Pattern(regex=".+\@.+\..+")
 	private String email;
 
 	private String password;
 	
 	private boolean actif;
 	
-	@Enumerated(EnumType.STRING)
-	//@NotNull
+	@Enumerated(EnumType.STRING)	
 	private Role role;
-	
-	//@JsonBackReference  
+		
 	@JsonIgnore
 	@ManyToMany(mappedBy="employes",fetch=FetchType.EAGER )
-	//@NotNull
+	
 	private List<Departement> departements;
 	
 	@JsonIgnore
-	//@JsonBackReference
 	@OneToOne(mappedBy="employe")
 	private Contrat contrat;
 	
-	@JsonIgnore
-	//@JsonBackReference
+	@JsonIgnore	
 	@OneToMany(mappedBy="employe")
 	private List<Timesheet> timesheets;
 	

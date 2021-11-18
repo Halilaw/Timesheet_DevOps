@@ -9,11 +9,12 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import tn.esprit.spring.dto.EmployeDTO;
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Entreprise;
 
 @Repository
-public interface EmployeRepository extends CrudRepository<Employe, Integer>  {
+public interface EmployeRepository extends CrudRepository<EmployeDTO, Integer>  {
 	
 	@Query("SELECT e FROM Employe e WHERE e.email=:email and e.password=:password")
 	public Employe getEmployeByEmailAndPassword(@Param("email")String login, @Param("password")String password);
@@ -59,7 +60,7 @@ public interface EmployeRepository extends CrudRepository<Employe, Integer>  {
 
 
 
-	public void deleteEmployeById(int i);
+	
 	
     		
    

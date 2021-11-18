@@ -28,6 +28,8 @@ public class ControllerEntrepriseImpl{
 	public void affecterDepartementAEntreprise(int depId, int entrepriseId) {
 		ientrepriseservice.affecterDepartementAEntreprise(depId, entrepriseId);
 	}
+	
+	@SuppressWarnings("unchecked")
 	public void deleteEntrepriseById(int entrepriseId)
 	{
 		ientrepriseservice.deleteEntrepriseById(entrepriseId);
