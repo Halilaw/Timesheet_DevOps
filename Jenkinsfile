@@ -81,7 +81,7 @@
     
         always { 
             echo 'I will always say Hello again!'
-            emailext (to: 'salimbrahim44@gmail.com, mohamedsayed.tourabi@esprit.tn',
+            emailext (to: 'salimbrahim44@gmail.com',
             replyTo: 'salimbrahim44@gmail.com',
             subject: "Email Report from - '${env.JOB_NAME}' ",
             attachLog:true,
