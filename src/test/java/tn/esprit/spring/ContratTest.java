@@ -86,6 +86,7 @@ public class ContratTest {
 		l.info("affichage c: " + c);
 		assertEquals(c.getReference(), cs.ajouterContrat(c));
 		l.info("test add contrat success");
+		
 	}
 
 	@Test
