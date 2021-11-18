@@ -18,6 +18,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import tn.esprit.spring.dto.EmployeDTO;
 import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.repository.ContratRepository;
@@ -96,9 +97,9 @@ public class ContratTest {
 		c.setSalaire(100);
 		c.setTypeContrat("CDD");
 		when(cr.findById(250)).thenReturn(Optional.of(c));
-		List<Employe> allEmloyes = es.getAllEmployes();
-		c = es.affecterContratAEmploye(c.getReference(), allEmloyes.get(0).getId());
-		assertEquals(c.getEmploye().getId(), cs.getById(c.getReference()).getEmploye().getId());
+		List<EmployeDTO> allEmloyes = es.getAllEmployes();
+		c = es.affecterContratAEmploye(c.getReference(), allEmloyes.get(0).getiDDto());
+		assertEquals(c.getEmploye().getiDDto(), cs.getById(c.getReference()).getEmploye().getiDDto());
 	}
 }
 

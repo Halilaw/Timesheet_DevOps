@@ -12,6 +12,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Pattern;
 
+import tn.esprit.spring.dto.EmployeDTO;
+
 @Entity
 public class Contrat implements Serializable {
 	
@@ -30,7 +32,7 @@ public class Contrat implements Serializable {
 	private float telephone;
 	
 	@OneToOne
-	private Employe employe;
+	private EmployeDTO employe;
 
 	private float salaire;
 
@@ -77,12 +79,12 @@ public class Contrat implements Serializable {
 		this.salaire = salaire;
 	}
 
-	public Employe getEmploye() {
+	public EmployeDTO getEmploye() {
 		return employe;
 	}
 
-	public void setEmploye(Employe employe) {
-		this.employe = employe;
+	public void setEmploye(EmployeDTO employeDTO) {
+		this.employe = employeDTO;
 	}
 	
 	

@@ -150,3 +150,83 @@
 2021-11-15 22:29:40,315 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - mis a jour mail
 2021-11-15 22:29:40,316 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - mis a jour mail avec Succ�s
 2021-11-15 22:29:40,316 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - mis a jour sans erreur
+2021-11-18 00:30:28,538 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - In Method getAllEmployes
+2021-11-18 00:30:28,950 [main] ERROR tn.esprit.spring.services.EmployeServiceImpl - out of method with errororg.springframework.dao.InvalidDataAccessApiUsageException: No enum constant tn.esprit.spring.entities.Role.nj; nested exception is java.lang.IllegalArgumentException: No enum constant tn.esprit.spring.entities.Role.nj
+2021-11-18 00:30:29,743 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - In Method getAllEmployes
+2021-11-18 00:30:29,744 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - Employes
+2021-11-18 00:30:29,744 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - Connexion Bd
+2021-11-18 00:30:29,745 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - out with succes
+2021-11-18 00:30:29,750 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - In Method getAllEmployes
+2021-11-18 00:30:29,750 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - Employes
+2021-11-18 00:30:29,750 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - Connexion Bd
+2021-11-18 00:30:29,750 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - out with succes
+2021-11-18 00:30:29,765 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - affichage d'une employe par id : 0
+2021-11-18 00:30:29,765 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - entrain d'afficher employe ... 
+2021-11-18 00:30:29,766 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - je viens d'afficher employe: 
+2021-11-18 00:30:29,766 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - affichage sans erreurs 
+2021-11-18 00:30:29,766 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - Methode affichage
+2021-11-18 00:30:30,071 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - employe existe
+2021-11-18 00:30:30,072 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - mis a jour mail
+2021-11-18 00:30:30,073 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - mis a jour mail avec Succès
+2021-11-18 00:30:30,074 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - mis a jour sans erreur
+2021-11-18 00:35:48,303 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - In Method getAllEmployes
+2021-11-18 00:35:49,198 [main] ERROR tn.esprit.spring.services.EmployeServiceImpl - out of method with errororg.springframework.dao.InvalidDataAccessApiUsageException: No enum constant tn.esprit.spring.entities.Role.nj; nested exception is java.lang.IllegalArgumentException: No enum constant tn.esprit.spring.entities.Role.nj
+2021-11-18 00:35:50,665 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - In Method getAllEmployes
+2021-11-18 00:35:50,665 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - Employes
+2021-11-18 00:35:50,666 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - Connexion Bd
+2021-11-18 00:35:50,666 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - out with succes
+2021-11-18 00:35:50,677 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - In Method getAllEmployes
+2021-11-18 00:35:50,678 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - Employes
+2021-11-18 00:35:50,678 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - Connexion Bd
+2021-11-18 00:35:50,678 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - out with succes
+2021-11-18 00:35:50,780 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - affichage d'une employe par id : 0
+2021-11-18 00:35:50,780 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - entrain d'afficher employe ... 
+2021-11-18 00:35:50,781 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - je viens d'afficher employe: 
+2021-11-18 00:35:50,781 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - affichage sans erreurs 
+2021-11-18 00:35:50,781 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - Methode affichage
+2021-11-18 00:35:51,331 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - employe existe
+2021-11-18 00:35:51,332 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - mis a jour mail
+2021-11-18 00:35:51,335 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - mis a jour mail avec Succès
+2021-11-18 00:35:51,335 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - mis a jour sans erreur
+2021-11-18 00:36:55,531 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - In Method getAllEmployes
+2021-11-18 00:36:55,811 [main] ERROR tn.esprit.spring.services.EmployeServiceImpl - out of method with errororg.springframework.dao.InvalidDataAccessApiUsageException: No enum constant tn.esprit.spring.entities.Role.nj; nested exception is java.lang.IllegalArgumentException: No enum constant tn.esprit.spring.entities.Role.nj
+2021-11-18 00:36:56,494 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - In Method getAllEmployes
+2021-11-18 00:36:56,494 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - Employes
+2021-11-18 00:36:56,495 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - Connexion Bd
+2021-11-18 00:36:56,495 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - out with succes
+2021-11-18 00:36:56,501 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - In Method getAllEmployes
+2021-11-18 00:36:56,502 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - Employes
+2021-11-18 00:36:56,502 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - Connexion Bd
+2021-11-18 00:36:56,502 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - out with succes
+2021-11-18 00:36:56,519 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - affichage d'une employe par id : 0
+2021-11-18 00:36:56,519 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - entrain d'afficher employe ... 
+2021-11-18 00:36:56,520 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - je viens d'afficher employe: 
+2021-11-18 00:36:56,520 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - affichage sans erreurs 
+2021-11-18 00:36:56,520 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - Methode affichage
+2021-11-18 00:36:56,735 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - employe existe
+2021-11-18 00:36:56,735 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - mis a jour mail
+2021-11-18 00:36:56,735 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - mis a jour mail avec Succès
+2021-11-18 00:36:56,736 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - mis a jour sans erreur
+2021-11-18 00:43:19,546 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - In Method getAllEmployes
+2021-11-18 00:43:20,249 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - Employes
+2021-11-18 00:43:20,249 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - Connexion Bd
+2021-11-18 00:43:20,250 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - Employe yasmine
+2021-11-18 00:43:20,251 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - Employe brahim
+2021-11-18 00:43:20,251 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - out with succes
+2021-11-18 00:43:21,051 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - In Method getAllEmployes
+2021-11-18 00:43:21,058 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - Employes
+2021-11-18 00:43:21,058 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - Connexion Bd
+2021-11-18 00:43:21,058 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - out with succes
+2021-11-18 00:43:21,075 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - In Method getAllEmployes
+2021-11-18 00:43:21,076 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - Employes
+2021-11-18 00:43:21,076 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - Connexion Bd
+2021-11-18 00:43:21,076 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - out with succes
+2021-11-18 00:43:21,092 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - affichage d'une employe par id : 0
+2021-11-18 00:43:21,093 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - entrain d'afficher employe ... 
+2021-11-18 00:43:21,096 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - je viens d'afficher employe: 
+2021-11-18 00:43:21,096 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - affichage sans erreurs 
+2021-11-18 00:43:21,097 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - Methode affichage
+2021-11-18 00:43:21,538 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - employe existe
+2021-11-18 00:43:21,538 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - mis a jour mail
+2021-11-18 00:43:21,538 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - mis a jour mail avec Succès
+2021-11-18 00:43:21,539 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - mis a jour sans erreur

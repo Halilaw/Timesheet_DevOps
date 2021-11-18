@@ -20,6 +20,7 @@ import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Entreprise;
 import tn.esprit.spring.entities.Mission;
 import tn.esprit.spring.entities.Timesheet;
+import tn.esprit.spring.repository.EmployeRepository;
 import tn.esprit.spring.services.IEmployeService;
 import tn.esprit.spring.services.IEntrepriseService;
 import tn.esprit.spring.services.ITimesheetService;
@@ -33,7 +34,8 @@ public class RestControlEmploye {
 	IEntrepriseService ientrepriseservice;
 	@Autowired
 	ITimesheetService itimesheetservice;
-	
+	@Autowired
+	EmployeRepository empRep;
 
 	
 	// http://localhost:8081/SpringMVC/servlet/ajouterEmployer
@@ -41,9 +43,10 @@ public class RestControlEmploye {
 	
 	@PostMapping("/ajouterEmployer")
 	@ResponseBody
-	public Employe ajouterEmploye(@RequestBody Employe employeDTO)
+	public EmployeDTO ajouterEmploye(@RequestBody EmployeDTO employeDTO)
 	{
 		iemployeservice.addOrUpdateEmploye(employeDTO);
+		//empRep.save(employeDTO);
 		return employeDTO;
 		
 	}
@@ -111,7 +114,7 @@ public class RestControlEmploye {
 	 // URL : http://localhost:8081/SpringMVC/servlet/getAllEmployes
 	@GetMapping(value = "/getAllEmployes")
     @ResponseBody
-	public List<Employe> getAllEmployes() {
+	public List<EmployeDTO> getAllEmployes() {
 		
 		return iemployeservice.getAllEmployes();
 	}
@@ -153,7 +156,7 @@ public class RestControlEmploye {
 	    // URL : http://localhost:8081/SpringMVC/servlet/getAllEmployeByEntreprise/1
 	    @GetMapping(value = "getAllEmployeByEntreprise/{identreprise}")
 	    @ResponseBody
-		public List<Employe> getAllEmployeByEntreprise(@PathVariable("identreprise") int identreprise) {
+		public List<EmployeDTO> getAllEmployeByEntreprise(@PathVariable("identreprise") int identreprise) {
 	    	Entreprise entreprise=ientrepriseservice.getEntrepriseById(identreprise);
 			return iemployeservice.getAllEmployeByEntreprise(entreprise);
 		}
@@ -172,7 +175,7 @@ public class RestControlEmploye {
 		}
 
 		
-		public List<Timesheet> getTimesheetsByMissionAndDate(Employe employe, Mission mission, Date dateDebut,
+		public List<Timesheet> getTimesheetsByMissionAndDate(EmployeDTO employe, Mission mission, Date dateDebut,
 				Date dateFin) {
 			return iemployeservice.getTimesheetsByMissionAndDate(employe, mission, dateDebut, dateFin);
 		}

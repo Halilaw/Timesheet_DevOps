@@ -1,14 +1,37 @@
 package tn.esprit.spring.dto;
 
+import java.util.List;
+
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
 import tn.esprit.spring.entities.Contrat;
+import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.entities.Role;
 
 public class EmployeDTO {
+	public EmployeDTO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	private int iDDto;
 	private String prenomDTO; 
+	private List<Departement> departements;
+	/**
+	 * @return the departements
+	 */
+	public List<Departement> getDepartements() {
+		return departements;
+	}
+
+	/**
+	 * @param departements the departements to set
+	 */
+	public void setDepartements(List<Departement> departements) {
+		this.departements = departements;
+	}
+
 	private String nomDTO;
 	public String getNomDTO() {
 		return nomDTO;
@@ -26,13 +49,26 @@ public class EmployeDTO {
 	private Contrat contratDTO;
 	
 	
-	public EmployeDTO() {
+	public EmployeDTO(String nom, String prenom, String email, String password, boolean actif, Role role) {
 		super();
 	}
 	
 
 	public int getiDDto() {
 		return iDDto;
+	}
+
+	public EmployeDTO(int iDDto, String prenomDTO, List<Departement> departements, String nomDTO, String emailDTO,
+			boolean isActifDTO, Role roleDTO, Contrat contratDTO) {
+		super();
+		this.iDDto = iDDto;
+		this.prenomDTO = prenomDTO;
+		this.departements = departements;
+		this.nomDTO = nomDTO;
+		this.emailDTO = emailDTO;
+		this.isActifDTO = isActifDTO;
+		this.roleDTO = roleDTO;
+		this.contratDTO = contratDTO;
 	}
 
 	public void setiDDto(int iDDto) {

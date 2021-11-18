@@ -8,6 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import tn.esprit.spring.dto.EmployeDTO;
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Mission;
 import tn.esprit.spring.entities.Timesheet;
@@ -31,7 +32,7 @@ public interface TimesheetRepository extends CrudRepository<Timesheet, Integer> 
 				+ "t.employe=:emp and "
 				+ "t.timesheetPK.dateDebut>=:dateD and "
 				+ "t.timesheetPK.dateFin<=:dateF")
-	public List<Timesheet> getTimesheetsByMissionAndDate(@Param("emp")Employe employe, @Param("mis")Mission mission, @Param("dateD")Date dateDebut,@Param("dateF")Date dateFin);
+	public List<Timesheet> getTimesheetsByMissionAndDate(@Param("emp")EmployeDTO employeDTO, @Param("mis")Mission mission, @Param("dateD")Date dateDebut,@Param("dateF")Date dateFin);
 
 	  public Timesheet findBytimesheetPK(TimesheetPK timesheetPK);
 }
