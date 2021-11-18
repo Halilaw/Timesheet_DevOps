@@ -14,7 +14,7 @@ stages {
               stage("Building") {
        steps {
        
-       bat "mvn build"
+       bat "mvn clean install"
              }}
 
       stage("Unit tests with JUnit") {
