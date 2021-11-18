@@ -41,11 +41,7 @@ public class EmployeServiceImpl implements IEmployeService {
 	
 	//----------------------------------------------------------------------------------------------------------------------------------
 		//Debut wael
-	@Override
-	public int addOrUpdateEmploye(Employe employe) {
-		employeRepository.save(employe);
-		return employe.getId();
-	}
+	
 
 	public String mettreAjourEmailByEmployeId(String email, int employeId) {
 		String msg="";
@@ -152,6 +148,11 @@ public class EmployeServiceImpl implements IEmployeService {
 	}
 	public float getSalaireByEmployeIdJPQL(int employeId) {
 		return employeRepository.getSalaireByEmployeIdJPQL(employeId);
+	}
+	@Override
+	public int addOrUpdateEmploye(Employe employe) {
+		employeRepository.save(employe);
+		return employe.getId();
 	}
 		//fin wael
 	//----------------------------------------------------------------------------------------------------------------------------------
