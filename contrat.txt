@@ -293,3 +293,26 @@
 2021-11-18 03:18:53,741 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - mis a jour mail
 2021-11-18 03:18:53,742 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - mis a jour mail avec Succès
 2021-11-18 03:18:53,744 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - mis a jour sans erreur
+2021-11-18 03:40:25,927 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - In Method getAllEmployes
+2021-11-18 03:40:26,836 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - Employes
+2021-11-18 03:40:26,836 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - Connexion Bd
+2021-11-18 03:40:26,836 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - Employe yasmine
+2021-11-18 03:40:26,836 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - Employe brahim
+2021-11-18 03:40:26,837 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - out with succes
+2021-11-18 03:40:28,641 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - In Method getAllEmployes
+2021-11-18 03:40:28,642 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - Employes
+2021-11-18 03:40:28,642 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - Connexion Bd
+2021-11-18 03:40:28,643 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - out with succes
+2021-11-18 03:40:28,650 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - In Method getAllEmployes
+2021-11-18 03:40:28,656 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - Employes
+2021-11-18 03:40:28,656 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - Connexion Bd
+2021-11-18 03:40:28,656 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - out with succes
+2021-11-18 03:40:28,733 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - affichage d'une employe par id : 0
+2021-11-18 03:40:28,734 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - entrain d'afficher employe ... 
+2021-11-18 03:40:28,734 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - je viens d'afficher employe: 
+2021-11-18 03:40:28,734 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - affichage sans erreurs 
+2021-11-18 03:40:28,734 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - Methode affichage
+2021-11-18 03:40:29,749 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - employe existe
+2021-11-18 03:40:29,750 [main] DEBUG tn.esprit.spring.services.EmployeServiceImpl - mis a jour mail
+2021-11-18 03:40:29,750 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - mis a jour mail avec Succès
+2021-11-18 03:40:29,750 [main] INFO  tn.esprit.spring.services.EmployeServiceImpl - mis a jour sans erreur
