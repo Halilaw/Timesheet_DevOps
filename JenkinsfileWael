@@ -35,7 +35,6 @@ stages {
       stage("DEPLOY with Nexus") {
       steps {
        bat "mvn deploy"
-	   mail bcc: '', body: 'build success', cc: '', from: '', replyTo: '', subject: 'Jenkins', to: 'wael.halila@gmail.com'
 			}}
 		
 	  stage('Docker : Build image') {
