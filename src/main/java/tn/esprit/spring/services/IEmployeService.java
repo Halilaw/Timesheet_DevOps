@@ -3,7 +3,6 @@ package tn.esprit.spring.services;
 import java.util.Date;
 import java.util.List;
 
-import tn.esprit.spring.dto.EmployeDTO;
 import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Entreprise;
@@ -14,11 +13,11 @@ public interface IEmployeService {
 	//wael
 	public Employe authenticate(String login, String password) ;
 	public String mettreAjourEmailByEmployeId(String email, int employeId);
-	int addOrUpdateEmploye(EmployeDTO employe);
+	int addOrUpdateEmploye(Employe employe);
 	public String getEmployePrenomById(int employeId);
 	public String deleteEmploye(int id) ;
 	public String mettreAjourEmailByEmployeIdJPQL(String email, int employeId);
-	public List<EmployeDTO> getAllEmployes();
+	public List<Employe> getAllEmployes();
 	public int getNombreEmployeJPQL();
 	public List<String> getAllEmployeNamesJPQL();
 	public float getSalaireByEmployeIdJPQL(int employeId);

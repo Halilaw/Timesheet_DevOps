@@ -32,7 +32,7 @@ public class Contrat implements Serializable {
 	
 	
 	@OneToOne
-	private EmployeDTO employe;
+	private Employe employe;
 
 	private float salaire;
 
@@ -79,11 +79,11 @@ public class Contrat implements Serializable {
 		this.salaire = salaire;
 	}
 
-	public EmployeDTO getEmploye() {
+	public Employe getEmploye() {
 		return employe;
 	}
 
-	public void setEmploye(EmployeDTO employeDTO) {
+	public void setEmploye(Employe employeDTO) {
 		this.employe = employeDTO;
 	}
 	

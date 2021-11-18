@@ -9,7 +9,6 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import tn.esprit.spring.dto.EmployeDTO;
 import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Mission;
@@ -73,11 +72,11 @@ public class TimesheetServiceImpl implements ITimesheetService {
 	
 	public void validerTimesheet(int missionId, int employeId, Date dateDebut, Date dateFin, int validateurId) {
 		System.out.println("In valider Timesheet");
-		Optional<EmployeDTO> validateur = employeRepository.findById(validateurId);
+		Optional<Employe> validateur = employeRepository.findById(validateurId);
 		Optional<Mission> mission = missionRepository.findById(missionId);
 		//verifier s'il est un chef de departement (interet des enum)
 		if (validateur.isPresent() && mission.isPresent()) {
-			if(!validateur.get().getRoleDTO().equals(Role.CHEF_DEPARTEMENT)){
+			if(!validateur.get().getRole().equals(Role.CHEF_DEPARTEMENT)){
 				System.out.println("l'employe doit etre chef de departement pour valider une feuille de temps !");
 				return;
 			}
