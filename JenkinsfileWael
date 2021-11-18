@@ -50,5 +50,14 @@ stages {
 				 }
 			}
 		}
+		post {
+        success {
+            emailext body: 'build success', subject: 'Jenkins', to: 'wael.halila@gmail.com'
+        }
+        
+        failure {
+            emailext body: 'build failure', subject: 'Jenkins', to:'wael.halila@gmail.com'
+        }
+    }
 	}
 	
