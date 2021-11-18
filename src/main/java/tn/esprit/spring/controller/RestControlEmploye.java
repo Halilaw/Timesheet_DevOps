@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import tn.esprit.spring.dto.EmployeDTO;
+
 import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Entreprise;
@@ -43,7 +43,7 @@ public class RestControlEmploye {
 	
 	@PostMapping("/ajouterEmployer")
 	@ResponseBody
-	public EmployeDTO ajouterEmploye(@RequestBody EmployeDTO employeDTO)
+	public Employe ajouterEmploye(@RequestBody Employe employeDTO)
 	{
 		iemployeservice.addOrUpdateEmploye(employeDTO);
 		//empRep.save(employeDTO);
@@ -114,7 +114,7 @@ public class RestControlEmploye {
 	 // URL : http://localhost:8081/SpringMVC/servlet/getAllEmployes
 	@GetMapping(value = "/getAllEmployes")
     @ResponseBody
-	public List<EmployeDTO> getAllEmployes() {
+	public List<Employe> getAllEmployes() {
 		
 		return iemployeservice.getAllEmployes();
 	}
@@ -156,7 +156,7 @@ public class RestControlEmploye {
 	    // URL : http://localhost:8081/SpringMVC/servlet/getAllEmployeByEntreprise/1
 	    @GetMapping(value = "getAllEmployeByEntreprise/{identreprise}")
 	    @ResponseBody
-		public List<EmployeDTO> getAllEmployeByEntreprise(@PathVariable("identreprise") int identreprise) {
+		public List<Employe> getAllEmployeByEntreprise(@PathVariable("identreprise") int identreprise) {
 	    	Entreprise entreprise=ientrepriseservice.getEntrepriseById(identreprise);
 			return iemployeservice.getAllEmployeByEntreprise(entreprise);
 		}
@@ -175,7 +175,7 @@ public class RestControlEmploye {
 		}
 
 		
-		public List<Timesheet> getTimesheetsByMissionAndDate(EmployeDTO employe, Mission mission, Date dateDebut,
+		public List<Timesheet> getTimesheetsByMissionAndDate(Employe employe, Mission mission, Date dateDebut,
 				Date dateFin) {
 			return iemployeservice.getTimesheetsByMissionAndDate(employe, mission, dateDebut, dateFin);
 		}

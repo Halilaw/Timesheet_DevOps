@@ -9,15 +9,15 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import tn.esprit.spring.dto.EmployeDTO;
+
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Entreprise;
 
 @Repository
-public interface EmployeRepository extends CrudRepository<EmployeDTO, Integer>  {
+public interface EmployeRepository extends CrudRepository<Employe, Integer>  {
 	
 	@Query("SELECT e FROM Employe e WHERE e.email=:email and e.password=:password")
-	public EmployeDTO getEmployeByEmailAndPassword(@Param("email")String login, @Param("password")String password);
+	public Employe getEmployeByEmailAndPassword(@Param("email")String login, @Param("password")String password);
 	
 	
 	
@@ -33,7 +33,7 @@ public interface EmployeRepository extends CrudRepository<EmployeDTO, Integer>  
 			+ "join emp.departements dps "
 			+ "join dps.entreprise entrep "
 			+ "where entrep=:entreprise")
-    public List<EmployeDTO> getAllEmployeByEntreprisec(@Param("entreprise") Entreprise entreprise);
+    public List<Employe> getAllEmployeByEntreprisec(@Param("entreprise") Entreprise entreprise);
     
     @Modifying
     @Transactional

@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import tn.esprit.spring.dto.EmployeDTO;
+
 import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Entreprise;
@@ -33,7 +33,7 @@ public class ControllerEmployeImpl  {
 	private String password; 
 	private Boolean loggedIn;
 	private String  weblogin = "/login.xhtml?faces-redirect=true";
-	private EmployeDTO authenticatedUser = null; 
+	private Employe authenticatedUser = null; 
 	private String prenom; 
 	private String nom; 
 	private String email;
@@ -41,7 +41,7 @@ public class ControllerEmployeImpl  {
 	private Role role;  
 	public Role[] getRoles() { return Role.values(); }
 
-	private List<EmployeDTO> employes; 
+	private List<Employe> employes; 
 	
 	private Integer employeIdToBeUpdated; // getter et setter
 
@@ -50,7 +50,7 @@ public class ControllerEmployeImpl  {
 
 		String navigateTo = "null";
 		authenticatedUser=employeService.authenticate(login, password);
-		if (authenticatedUser != null && authenticatedUser.getRoleDTO() == Role.ADMINISTRATEUR) {
+		if (authenticatedUser != null && authenticatedUser.getRole() == Role.ADMINISTRATEUR) {
 			navigateTo = "/pages/admin/welcome.xhtml?faces-redirect=true";
 			loggedIn = true;
 		}		
@@ -77,7 +77,7 @@ public class ControllerEmployeImpl  {
 
 		if (authenticatedUser==null || !loggedIn) return weblogin;
 
-		employeService.addOrUpdateEmploye(new EmployeDTO(nom, prenom, email, password, actif, role)); 
+		employeService.addOrUpdateEmploye(new Employe(nom, prenom, email, password, actif, role)); 
 		return "null"; 
 	}  
 
@@ -113,7 +113,7 @@ public class ControllerEmployeImpl  {
 		
 		if (authenticatedUser==null || !loggedIn) return weblogin;
 
-		employeService.addOrUpdateEmploye(new EmployeDTO(nom, prenom, email, password, actif, role));
+		employeService.addOrUpdateEmploye(new Employe(nom, prenom, email, password, actif, role));
 		return navigateTo; 
 
 	} 
@@ -146,7 +146,7 @@ public class ControllerEmployeImpl  {
 	}
 
 
-	public List<EmployeDTO> getAllEmployes() {
+	public List<Employe> getAllEmployes() {
 		return employeService.getAllEmployes();
 	}
 
@@ -158,10 +158,10 @@ public class ControllerEmployeImpl  {
 		this.loggedIn = loggedIn;
 	}
 
-	public int ajouterEmploye(EmployeDTO employe)
+	public int ajouterEmploye(Employe employe)
 	{
 		employeService.addOrUpdateEmploye(employe);
-		return employe.getiDDto();
+		return employe.getId();
 	}
 
 	public void mettreAjourEmailByEmployeId(String email, int employeId) {
@@ -191,7 +191,7 @@ public class ControllerEmployeImpl  {
 	}
 
 
-	public List<EmployeDTO> getAllEmployeByEntreprise(Entreprise entreprise) {
+	public List<Employe> getAllEmployeByEntreprise(Entreprise entreprise) {
 		return employeService.getAllEmployeByEntreprise(entreprise);
 	}
 	public void deleteContratById(int contratId) {
@@ -205,7 +205,7 @@ public class ControllerEmployeImpl  {
 		return employeService.getSalaireMoyenByDepartementId(departementId);
 	}
 
-	public List<Timesheet> getTimesheetsByMissionAndDate(EmployeDTO employe, Mission mission, Date dateDebut,
+	public List<Timesheet> getTimesheetsByMissionAndDate(Employe employe, Mission mission, Date dateDebut,
 			Date dateFin) {
 		return employeService.getTimesheetsByMissionAndDate(employe, mission, dateDebut, dateFin);
 	}
@@ -287,12 +287,12 @@ public class ControllerEmployeImpl  {
 		this.role = role;
 	}
 
-	public List<EmployeDTO> getEmployes() {
+	public List<Employe> getEmployes() {
 		employes = employeService.getAllEmployes(); 
 		return employes;
 	}
 
-	public void setEmployes(List<EmployeDTO> employes) {
+	public void setEmployes(List<Employe> employes) {
 		this.employes = employes;
 	}
 
@@ -304,11 +304,11 @@ public class ControllerEmployeImpl  {
 		this.employeIdToBeUpdated = employeIdToBeUpdated;
 	}
 
-	public EmployeDTO getAuthenticatedUser() {
+	public Employe getAuthenticatedUser() {
 		return authenticatedUser;
 	}
 
-	public void setAuthenticatedUser(EmployeDTO authenticatedUser) {
+	public void setAuthenticatedUser(Employe authenticatedUser) {
 		this.authenticatedUser = authenticatedUser;
 	}
 

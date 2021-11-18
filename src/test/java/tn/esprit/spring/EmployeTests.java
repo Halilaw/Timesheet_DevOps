@@ -26,7 +26,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import tn.esprit.spring.dto.EmployeDTO;
+
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Role;
 import tn.esprit.spring.repository.EmployeRepository;
@@ -52,7 +52,7 @@ public class EmployeTests {
 	@InjectMocks
 	private EmployeServiceImpl employeService;
 
-	private EmployeDTO employe1;
+	private Employe employe1;
 
 	private static String mail = "wael.halila@gmail.com";
 
@@ -60,7 +60,7 @@ public class EmployeTests {
 	@Before
 	public void setUp() {
 		
-		employe1 = new EmployeDTO(
+		employe1 = new Employe(
 				"halila", "wael", "wael.halila@gmail.com", null, true, Role.INGENIEUR);
 	
 		employeRepository.save(employe1);
@@ -76,13 +76,13 @@ public class EmployeTests {
 	}
 	@Test
  	public void ajouterEmployeTest() {
-		   EmployeDTO e = new EmployeDTO();
-		   e.setActifDTO(true);
-		   e.setEmailDTO("wael.halila@mail.com");
-		   e.setNomDTO("halila");
-		   e.setPrenomDTO("wael"); 
+		Employe e = new Employe();
+		   e.setActif(true);
+		   e.setEmail("wael.halila@mail.com");
+		   e.setNom("halila");
+		   e.setPrenom("wael"); 
 		  when(employeRepository.save(e)).thenReturn(e);	
-		  assertEquals(e.getiDDto(), employeService.addOrUpdateEmploye(e));
+		  assertEquals(e.getId(), employeService.addOrUpdateEmploye(e));
 		  
 	}
 	
@@ -94,7 +94,7 @@ public class EmployeTests {
     @Test
     public void getAllEmployeNamesJPQLTest() {
         List<String> list = employeService.getAllEmployeNamesJPQL();
-        List<String> list1 = employeService.getAllEmployes().stream().map(EmployeDTO::getNomDTO).collect(Collectors.toList());
+        List<String> list1 = employeService.getAllEmployes().stream().map(Employe::getNom).collect(Collectors.toList());
         assertEquals(list, list1);
     }
 
@@ -108,27 +108,27 @@ public class EmployeTests {
 	        int employeId = 1;
 	        double salaire = employeService.getSalaireByEmployeIdJPQL(employeId);
 	        assertFalse(employeRepository.findById(employeId).isPresent() &&
-	                employeRepository.findById(employeId).get().getContratDTO().getSalaire() == salaire);
+	                employeRepository.findById(employeId).get().getContrat().getSalaire() == salaire);
 	    }
 		@Test
 		public void mettreAjourEmailByEmployeIdTest() {
-			employeService.mettreAjourEmailByEmployeId(mail, employe1.getiDDto());
-			Optional<EmployeDTO> e = employeRepository.findById(employe1.getiDDto());
+			employeService.mettreAjourEmailByEmployeId(mail, employe1.getId());
+			Optional<Employe> e = employeRepository.findById(employe1.getId());
 			if (e.isPresent()) {
-				assertThat(e.get().getEmailDTO()).isEqualTo(mail);
+				assertThat(e.get().getEmail()).isEqualTo(mail);
 			}
 		}
 		@Test
 		public void getEmployePrenomByIdTest() {
-			String prenom = employeService.getEmployePrenomById(employe1.getiDDto());
+			String prenom = employeService.getEmployePrenomById(employe1.getId());
 			assertThat(prenom).isEqualTo(null);
 		}
 		@Test
 		public void mettreAjourEmailByEmployeIdJPQLTest() {
-			employeService.mettreAjourEmailByEmployeIdJPQL("wael.halila@gmail.com", employe1.getiDDto());
-			Optional<EmployeDTO> e = employeRepository.findById(employe1.getiDDto());
+			employeService.mettreAjourEmailByEmployeIdJPQL("wael.halila@gmail.com", employe1.getId());
+			Optional<Employe> e = employeRepository.findById(employe1.getId());
 			if (e.isPresent()) {
-				assertThat(e.get().getEmailDTO()).isEqualTo("wael.halila@gmail.com");
+				assertThat(e.get().getEmail()).isEqualTo("wael.halila@gmail.com");
 			}
 		}
 		@Test

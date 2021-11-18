@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import tn.esprit.spring.dto.EmployeDTO;
 import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.entities.Employe;
@@ -33,32 +32,33 @@ public class EmployeServiceImpl implements IEmployeService {
 	ContratRepository contratRepoistory;
 	@Autowired
 	TimesheetRepository timesheetRepository;
-	@Autowired
-	ContratServiceImpl contratService;
+
 	@Override
-	public EmployeDTO authenticate(String login, String password) {
+	public Employe authenticate(String login, String password) {
 		return employeRepository.getEmployeByEmailAndPassword(login, password);
 	}
 
 	
+	//----------------------------------------------------------------------------------------------------------------------------------
+		//Debut wael
 	@Override
-	public int addOrUpdateEmploye(EmployeDTO employe) {
+	public int addOrUpdateEmploye(Employe employe) {
 		employeRepository.save(employe);
-		return employe.getiDDto();
+		return employe.getId();
 	}
 
 	public String mettreAjourEmailByEmployeId(String email, int employeId) {
 		String msg="";
-		EmployeDTO x = new EmployeDTO();
+		Employe x = new Employe ();
 		try {
 		l.info("employe existe");	
 		l.debug("mis a jour mail");
-		Optional<EmployeDTO> y = employeRepository.findById(employeId) ;
+		Optional<Employe> y = employeRepository.findById(employeId) ;
 		if (y.isPresent())
 		{
 			x = y.get();
 		}
-		x.getEmailDTO();
+		x.setEmail(email);
 		l.info("mis a jour mail avec Succès");
 		msg="success";
 	
@@ -71,19 +71,19 @@ public class EmployeServiceImpl implements IEmployeService {
 		return msg;
 	}
 	
-	public List<EmployeDTO> getAllEmployes() {
+	public List<Employe> getAllEmployes() {
 		
-		List<EmployeDTO> employes = null; 
+		List<Employe> employes = null; 
 		try {
 	
 			
 			l.info("In Method getAllEmployes");
-			employes = (List<EmployeDTO>) employeRepository.findAll();
+			employes = (List<Employe>) employeRepository.findAll();
 				 l.info("Employes");
 					l.debug("Connexion Bd");
 					
-					for (EmployeDTO employe : employes) {
-						l.info("Employe "+employe.getNomDTO());
+					for (Employe employe : employes) {
+						l.info("Employe "+employe.getNom());
 					} 
 					l.info("out with succes");
 
@@ -95,13 +95,13 @@ public class EmployeServiceImpl implements IEmployeService {
 	
 	public String getEmployePrenomById(int employeId) {
 		
-		EmployeDTO x = new EmployeDTO();
+		Employe x = new Employe();
 		try{
 			l.info("affichage d'une employe par id : "+employeId);
 			l.debug("entrain d'afficher employe ... ");
 			
 			
-			Optional<EmployeDTO> y = employeRepository.findById(employeId) ;
+			Optional<Employe> y = employeRepository.findById(employeId) ;
 			if (y.isPresent())
 			{
 				x = y.get();
@@ -119,7 +119,7 @@ public class EmployeServiceImpl implements IEmployeService {
 		
 	
 		}
-	return x.getPrenomDTO();
+	return x.getPrenom();
 }
 
 	public int getNombreEmployeJPQL() {
@@ -153,13 +153,13 @@ public class EmployeServiceImpl implements IEmployeService {
 	public float getSalaireByEmployeIdJPQL(int employeId) {
 		return employeRepository.getSalaireByEmployeIdJPQL(employeId);
 	}
-		
+		//fin wael
 	//----------------------------------------------------------------------------------------------------------------------------------
 	
 	@Transactional	
 	public void affecterEmployeADepartement(int employeId, int depId) {
 		Optional<Departement> depManagedEntity = deptRepoistory.findById(depId);
-		Optional<EmployeDTO> employeManagedEntity = employeRepository.findById(employeId);
+		Optional<Employe> employeManagedEntity = employeRepository.findById(employeId);
 		
 		if (depManagedEntity.isPresent() &&  employeManagedEntity.isPresent()) {
 			
@@ -167,7 +167,7 @@ public class EmployeServiceImpl implements IEmployeService {
 
 		if(depManagedEntity.get().getEmployes() == null){
 
-			List<EmployeDTO> employes = new ArrayList<>();
+			List<Employe> employes = new ArrayList<>();
 			employes.add(employeManagedEntity.get());
 			depManagedEntity.get().setEmployes(employes);
 		}else{
@@ -187,12 +187,14 @@ public class EmployeServiceImpl implements IEmployeService {
 			
 			int employeNb = dep.get().getEmployes().size();
 			for(int index = 0; index < employeNb; index++){
-				if(dep.get().getEmployes().get(index).getiDDto() == employeId){
+				if(dep.get().getEmployes().get(index).getId() == employeId){
 					dep.get().getEmployes().remove(index);
-					break;
+					break;//a revoir
 				}
 			}
-		}}
+		}
+		
+	} 
 	
 	// Tablesapce (espace disque) 
 
@@ -203,12 +205,15 @@ public class EmployeServiceImpl implements IEmployeService {
 
 	public Contrat affecterContratAEmploye(int contratId, int employeId) {
 		Optional<Contrat> contratManagedEntity = contratRepoistory.findById(contratId);
-		Optional<EmployeDTO> employeManagedEntity =employeRepository.findById(employeId);
+		Optional<Employe> employeManagedEntity = employeRepository.findById(employeId);
 		if (contratManagedEntity.isPresent() && employeManagedEntity.isPresent()) {
 			contratManagedEntity.get().setEmploye(employeManagedEntity.get());
 			contratRepoistory.save(contratManagedEntity.get());
+			return contratManagedEntity.get();
 		}
-		return contratManagedEntity.get();
+		return null;
+		
+
 	}
 	 
 
@@ -223,7 +228,7 @@ public class EmployeServiceImpl implements IEmployeService {
 
 	
 
-	public List<EmployeDTO> getAllEmployeByEntreprise(Entreprise entreprise) {
+	public List<Employe> getAllEmployeByEntreprise(Entreprise entreprise) {
 		return employeRepository.getAllEmployeByEntreprisec(entreprise);
 	}
 
@@ -238,14 +243,7 @@ public class EmployeServiceImpl implements IEmployeService {
 		return employeRepository.getSalaireMoyenByDepartementId(departementId);
 	}
 
-/*	public List<Timesheet> getTimesheetsByMissionAndDate(Employe employe, Mission mission, Date dateDebut,
-			Date dateFin) {
-		return timesheetRepository.getTimesheetsByMissionAndDate(employe, mission, dateDebut, dateFin);
-	}*/
-
-
-	@Override
-	public List<Timesheet> getTimesheetsByMissionAndDate(EmployeDTO employe, Mission mission, Date dateDebut,
+	public List<Timesheet> getTimesheetsByMissionAndDate(Employe employe, Mission mission, Date dateDebut,
 			Date dateFin) {
 		return timesheetRepository.getTimesheetsByMissionAndDate(employe, mission, dateDebut, dateFin);
 	}
